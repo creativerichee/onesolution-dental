@@ -59,8 +59,8 @@
   html.light .btn-ghost:hover{background:#177A65;border-color:#177A65;}
   html.light .hero-copy .btn-ghost{background:transparent !important;color:#EAF2EF !important;border-color:rgba(234,242,239,0.35) !important;}
   html.light .hero-copy .btn-ghost:hover{background:rgba(255,255,255,0.08) !important;}
-  html.light .final-btns .btn-ghost{background:transparent !important;color:var(--ivory) !important;border-color:var(--glass-border) !important;}
-  html.light .final-btns .btn-ghost:hover{background:var(--glass) !important;}
+  html.light .final-btns .btn-ghost{background:transparent !important;color:#EAF2EF !important;border-color:rgba(234,242,239,0.35) !important;}
+  html.light .final-btns .btn-ghost:hover{background:rgba(255,255,255,0.08) !important;}
   section{padding:150px 0;position:relative;}
   [data-reveal]{opacity:0;transform:translateY(24px);transition:opacity .8s ease, transform .8s ease;}
   [data-reveal].in{opacity:1;transform:translateY(0);}
@@ -71,6 +71,7 @@
   .lang-btn .caret{width:9px;height:9px;opacity:.7;}
   @media (max-width:560px){.lang-btn{height:32px;padding:0 10px;font-size:.72rem;} .lang-btn .flag{font-size:.9rem;}}
   .translate-dropdown{position:fixed;top:78px;right:24px;z-index:250;background:var(--bg);border:1px solid var(--glass-border);border-radius:14px;padding:10px;box-shadow:0 20px 50px -20px rgba(0,0,0,.5);display:none;}
+  @media (max-width:560px){.translate-dropdown{top:92px;right:12px;}}
   .translate-dropdown.open{display:block;}
   #google_translate_element .goog-te-gadget{font-family:var(--sans) !important;font-size:0 !important;color:transparent !important;}
   #google_translate_element .goog-te-gadget .goog-te-combo{
@@ -111,7 +112,7 @@
     .nav-right .btn{display:none;}
   }
   @media (max-width:560px){
-    .nav{padding:8px 8px 8px 16px;width:94%;top:10px;gap:6px;}
+    .nav{padding:8px 8px 8px 16px;width:94%;top:22px;gap:6px;}
     .nav .logo{font-size:1rem;white-space:nowrap;}
     .nav-phone{display:none;}
     .nav-right{gap:8px;}
@@ -123,6 +124,7 @@
 
   /* ---------- 02 HERO 8s 3D ---------- */
   .hero-track{position:relative;height:350vh;}
+  @media (max-width:560px){.hero-track{height:220vh;}}
   .hero-pin{position:sticky;top:0;height:100vh;width:100%;overflow:hidden;background:#050605;display:flex;align-items:center;justify-content:center;perspective:1600px;}
   .hero-stage{position:relative;width:100%;height:100%;display:flex;align-items:center;justify-content:center;transform-style:preserve-3d;}
   .hero-frame{position:relative;width:100%;height:100%;overflow:hidden;transform-style:preserve-3d;will-change:transform;}
@@ -137,7 +139,7 @@
   @media (max-width:560px){
     .hero-float-label{top:22%;font-size:.6rem;letter-spacing:.04em;padding:0 12px;white-space:nowrap;}
     .hero-copy{bottom:14%;width:94%;}
-    .hero-copy h1{font-size:clamp(2.1rem,9vw,3rem);line-height:1.04;}
+    .hero-copy h1{font-size:clamp(2.4rem,10vw,3.4rem);line-height:1.04;}
     .hero-copy p{font-size:.92rem;margin-top:14px;}
     .hero-btns{margin-top:20px;gap:10px;}
     .hero-btns .btn{padding:12px 20px;font-size:.8rem;}
@@ -318,11 +320,20 @@
   .faq-item.open .faq-a{max-height:400px;padding-top:14px;}
 
   /* ---------- 16 FINAL CTA ---------- */
-  .final-cta{text-align:center;padding:170px 0;background:radial-gradient(55% 70% at 50% 30%, rgba(200,169,107,.14), transparent);}
-  .final-cta h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,5.5vw,4.4rem);line-height:1.05;margin-bottom:22px;}
-  .final-cta p{color:var(--ink-dim);margin-bottom:36px;max-width:520px;margin-inline:auto;}
+  .final-cta{
+    position:relative;text-align:center;padding:170px 0;overflow:hidden;
+    background:url('other-images/lady-smile.jpg') center 30% / cover no-repeat;
+  }
+  .final-cta::before{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(6,10,9,.55) 0%, rgba(6,10,9,.62) 60%, rgba(6,10,9,.72) 100%);
+    pointer-events:none;
+  }
+  .final-cta .wrap{position:relative;z-index:2;}
+  .final-cta h2{font-family:var(--serif);font-weight:400;font-size:clamp(2.4rem,5.5vw,4.4rem);line-height:1.05;margin-bottom:22px;color:#EAF2EF;}
+  .final-cta p{color:#D7E4E0;margin-bottom:36px;max-width:520px;margin-inline:auto;}
   .final-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:22px;}
-  .final-phone{color:var(--ink-dim);font-size:.9rem;}
+  .final-phone{color:#D7E4E0;font-size:.9rem;position:relative;z-index:2;}
 
   /* ---------- 17 FOOTER ---------- */
   footer{border-top:1px solid var(--glass-border);padding:60px 0 40px;}
